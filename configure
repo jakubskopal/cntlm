@@ -53,7 +53,7 @@ fi
 
 STAMP=configure-stamp
 CONFIG=config/config.h
-TESTS="strdup socklen_t gethostname"
+TESTS="endian strdup socklen_t gethostname"
 
 #[ -f $STAMP ] && exit 0
 touch $STAMP
@@ -82,7 +82,7 @@ cat <<"EOF" >> $CONFIG
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
 #define config_endian 1
 #warning using LITTLE endian
-#else
+#elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define config_endian 0
 #warning using BIG endian
 #endif

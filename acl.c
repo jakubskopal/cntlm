@@ -32,10 +32,6 @@
 #include "swap.h"
 
 /*
- * TODO: retest ACLs on big-endian
- */
-
-/*
  * Add the rule spec to the ACL list.
  */
 int acl_add(plist_t *rules, char *spec, enum acl_t acl) {
@@ -77,7 +73,7 @@ int acl_add(plist_t *rules, char *spec, enum acl_t acl) {
 
 	aux->ip = source.s_addr;
 	aux->mask = mask;
-	mask = swap32(~(((uint64_t)1 << (32-mask)) - 1));
+	mask = U32BE(~(((uint64_t)1 << (32-mask)) - 1));
 	if ((source.s_addr & mask) != source.s_addr)
 		syslog(LOG_WARNING, "Subnet definition might be incorrect: %s/%d\n", inet_ntoa(source), aux->mask);
 

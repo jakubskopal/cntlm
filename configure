@@ -81,10 +81,8 @@ done
 cat <<"EOF" >> $CONFIG
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
 #define config_endian 1
-#warning using LITTLE endian
 #elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define config_endian 0
-#warning using BIG endian
 #endif
 EOF
 

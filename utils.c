@@ -894,7 +894,6 @@ int from_base64(char *out, const char *in)
 
 	do {
 		digit1 = in[0];
-        printf("digit1=%c in[0]=%c base64val()=%i\n", digit1, in[0], base64val(digit1));
 		if (digit1 > 127 || base64val (digit1) == BAD)
 			return -1;
 

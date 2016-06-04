@@ -1,3 +1,9 @@
+This is my version of cntlm forked from official SourceForge CNTLM repository starting version 0.92.3.
+Modifications include crosscompilation fix and some endinannes fixes.
+
+Jakub Skopal <j@kubs.cz>
+
+
 Installation using packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
